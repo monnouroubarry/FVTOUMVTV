@@ -1,0 +1,42 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#teteconnexion{
+    background-color: #14df68;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 0 15px #0000ff08
+}
+
+#conternaire{
+    background-color: #ccc;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0,0, 0.1);
+}
+input{
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    border: none;
+    padding: 10px;
+    border: 1px solid #8b8484;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button{
+    background-color: #990000;
+    color: #ffffff;
+    padding: 10px;
+    width: 100%;
+}
+#info{
+    color: #ff0000;
+    margin-top: 10px;
+}

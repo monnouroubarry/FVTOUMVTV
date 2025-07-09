@@ -1,0 +1,134 @@
+/*
+input{
+    margin-top: 20px;
+    margin-left: 40%;
+    padding: 20px;
+}
+
+button{
+    padding: 15px 25px;
+
+    background-color: #14ab25;
+    color: #0000ff;
+    border: none;
+    border-radius: 8px;
+    margin-left: 40%;
+    margin-top: 10px;
+}
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#monHeader{
+    position: fixed;
+    top: 130px;
+    width: 100%;
+    height: 60px;
+    background-color: green;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    z-index: 1000;
+} */
+
+:root{
+    --main-color:#f03be7;
+}
+body {
+    background-color: var(--main-color);
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 10px;
+    right: -10px;
+    width: 98%;
+    height: 80px;
+    background-color: #00bfff;
+    border: none;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: xx-large;
+}
+button{
+    margin-top: 90px;
+    margin-bottom: 10px;
+    padding: 10px 25px;
+    background-color: #00ff00;
+    color: #0000ff;
+    border: none;
+    border-radius: 8px;
+    font-size: medium;
+    cursor: pointer;
+}
+#rechercher{
+    display: block;
+    margin: auto;
+    padding: 8px 130px;
+    border-radius: 20px;
+    border: 2px solid #00bfff;
+    font-size: large;
+}
+#sinscrire{
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    color: #00bfff;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    width: max-content;
+}
+#parent{
+    background-color: #0000ff;
+    padding: 50px;
+    cursor: pointer;
+}
+#fils{
+    background-color: #14ab25;
+    padding: 30px;
+    cursor: pointer;
+}
+
+#lnom, #lprenom,
+#lemail, #lpassword1,
+#lpassword2 {
+    display: inline-block;
+    width: 185px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+#inom, #iprenom,
+#iemail, #ipassword1,
+#ipassword2 {
+    width: 170px; 
+    padding: 8px;
+    border: 2 solid #00bfff;
+    border-radius: 5px;
+    margin-bottom: 12px;
+}
+#valider{
+    background-color: #00ff00;
+    margin-left: 30px;
+    color: #0000ff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+#divh3 {
+    background-color: #14ab25;
+    padding: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#tailleEcran{
+    background-color: #0000ff;
+    padding: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
