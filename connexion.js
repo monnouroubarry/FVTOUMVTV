@@ -58,7 +58,7 @@ console.log("type avant conversion: ", typeof(string));
 //Affichage après conversion
 const number = Number(string);
 console.log(number);
-console.log("type après conversion: ", typeof(number)); */
+console.log("type après conversion: ", typeof(number)); 
 //les méthodes de manipulation des tableaux en JavaScript
 const contacts = {
     "Aïssatou": {phone: "622-100-100", email: "aissatou@example.com"},
@@ -92,3 +92,52 @@ console.log(contacts);
 delete contacts["Mamadou"];
 console.log("Contacts après suppréssion de Mamadou");
 console.log(contacts);
+//Affichage uniquement de l'année actuelle
+const now = new Date();
+console.log("L'année d'aujourd'hui:", now.getFullYear(now));
+//Une fonction qui reçoit l'année de naissance et retourne l'age
+function recoitAge(annee_naissance){
+    return console.log("L'âge est:", now.getFullYear(now) - annee_naissance);
+};
+recoitAge(2003);
+//formatage d'une date pour quelle s'affiche comma ça : JJ/MM/AAAA
+function formaterDate(date){
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `La date d'aujourd'hui est: ${day}/${month}/${year}`;
+}
+console.log(formaterDate (new Date("2003-06-11"))); 
+// Création d'un objet nom, age et ville et extraction du nom et de l'âge
+const info_etudiant = {
+    nom: "Monnourou", age: 22, ville: "Mamou"
+};
+const {nom, age} = info_etudiant;
+console.log("Nom:", nom);
+console.log("Age:", age);
+// Avec un tableau de trois couleur, extraire la première et la troisième couleur en une ligne
+const couleur = ["Blue","white","Green"];
+console.log("la 1ère:",couleur[0],", la 3ème:", couleur[2]);
+// Autrement
+const [premiere, , troisieme] = couleur;
+console.log("la prémiere:",premiere," troisième:", troisieme); 
+// Créer un élément HTML avec des attributs data-nom et data-niveau et ensuite les lire sur JavaScript
+const nom_niveau = document.getElementById('user');
+console.log("Le nom:", nom_niveau.dataset.nom);
+console.log("Le niveau:", nom_niveau.dataset.niveau);
+// Créer une fonction qui reçoit un élément HTML et retourne tous ses attributs data-* sous forme d'Objet JavaScript
+const element = document.getElementById('monElement');
+const data = touslesAttribues(element); // Appelle de la fonction getDataAttributes avant ça déclaration
+console.log(data); // Affichage de la variable qui stocke le contenu de la fonction
+ function touslesAttribues(element) { // Déclaration de la fonction
+  return { ...element.dataset };
+}
+data.age = Number(data.age); // permet de transformer l'age en number */
+//Exercice sur les regex
+const numero = "+224654321987";
+const regex = /^\+224\d{9}$/;
+if(regex.test(numero)){
+    console.log(`Le numéro ${numero} est valide`);
+} else{
+    console.log(`Le numéro ${numero} est invalide !`);
+}
