@@ -30,13 +30,38 @@ input{
     border-radius: 5px;
     cursor: pointer;
 }
-button{
-    background-color: #990000;
-    color: #ffffff;
-    padding: 10px;
-    width: 100%;
-}
 #info{
     color: #ff0000;
     margin-top: 10px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #333;
+}
+
+#joke {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #555;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #005f73;
 }

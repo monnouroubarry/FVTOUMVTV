@@ -132,7 +132,7 @@ console.log(data); // Affichage de la variable qui stocke le contenu de la fonct
  function touslesAttribues(element) { // Déclaration de la fonction
   return { ...element.dataset };
 }
-data.age = Number(data.age); // permet de transformer l'age en number */
+data.age = Number(data.age); // permet de transformer l'age en number 
 //Exercice sur les regex
 const numero = "+224654321987";
 const regex = /^\+224\d{9}$/;
@@ -140,4 +140,49 @@ if(regex.test(numero)){
     console.log(`Le numéro ${numero} est valide`);
 } else{
     console.log(`Le numéro ${numero} est invalide !`);
-}
+} // <libphonenumber-js> est une bibliothèque qui permet de vérifier si un numéro est valide 
+ //les API en JavaScript
+ document.getElementById('jokeBtn').addEventListener('click', () => {
+  fetch('https://official-joke-api.appspot.com/random_joke')
+    .then(response => response.json())
+    .then(data => {
+      const setup = data.setup;
+      const punchline = data.punchline;
+      document.getElementById('joke').innerHTML = `
+        <p><strong>${setup}</strong></p>
+        <p>${punchline}</p>
+      `;
+    })
+    .catch(error => {
+      document.getElementById('joke').textContent = "Erreur lors du chargement de la blague.";
+      console.error(error);
+    });
+}); 
+// Définir l'URL de la fausse API
+const url = 'https://jsonplaceholder.typicode.com/users';
+
+// Créer un objet contenant le nom à envoyer
+const data = {
+    nom: 'Barry',
+    prenom: 'Monnourou',
+    age: 22
+};
+
+// Envoyer la requête POST
+fetch(url, {
+  method: 'POST', // Méthode HTTP
+  headers: {
+    'Content-Type': 'application/json' // On envoie des données JSON
+  },
+  body: JSON.stringify(data) // On transforme l'objet JS en JSON texte
+})
+.then(response => response.json()) // On convertit la réponse en JSON
+.then(result => {
+  // 4. Afficher la réponse dans la console
+  console.log('Réponse du serveur :', result);
+})
+.catch(error => {
+  console.error('Erreur lors de la requête :', error);
+}); */
+
+
