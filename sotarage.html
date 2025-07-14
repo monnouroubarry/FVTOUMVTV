@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulaire avec localStorage</title>
+</head>
+<body>
+
+  <h2>Formulaire utilisateur</h2>
+
+  <form id="userForm">
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required><br><br>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="age">Âge :</label>
+    <input type="number" id="age" name="age" required><br><br>
+
+    <label for="ville">Ville :</label>
+    <input type="text" id="ville" name="ville" required><br><br>
+
+    <button type="submit">Enregistrer</button>
+  </form>
+
+  <p id="confirmation" style="color: green;"></p>
+
+  <script>
+    const form = document.getElementById('userForm');
+    const confirmation = document.getElementById('confirmation');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Empêche l'envoi du formulaire
+
+      // Récupération des données
+      const nom = document.getElementById('nom').value;
+      const email = document.getElementById('email').value;
+      const age = document.getElementById('age').value;
+      const ville = document.getElementById('ville').value;
+
+      // Création de l'objet utilisateur
+      const utilisateur = {
+        nom: nom,
+        email: email,
+        age: age,
+        ville: ville
+      };
+
+      // Enregistrement dans le localStorage
+      localStorage.setItem('utilisateur', JSON.stringify(utilisateur));
+
+      // Affichage confirmation
+      confirmation.textContent = 'Données enregistrées dans le localStorage';
+
+      // Affichage dans la console
+      console.log("Données enregistrées :", utilisateur);
+    });
+  </script>
+
+</body>
+</html>

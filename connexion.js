@@ -183,6 +183,38 @@ fetch(url, {
 })
 .catch(error => {
   console.error('Erreur lors de la requête :', error);
-}); */
+}); 
 
+// --- JSON ---
+const utilisateur = { nom: "Ali", age: 22 };
+const jsonStr = JSON.stringify(utilisateur);
+console.log("JSON.stringify :", jsonStr);
+const obj = JSON.parse(jsonStr);
+console.log("JSON.parse :", obj.nom, obj.age);
 
+// --- Local Storage ---
+localStorage.setItem("theme", "sombre");
+console.log("Thème localStorage :", localStorage.getItem("theme"));
+// localStorage.removeItem("theme");
+// localStorage.clear();
+
+// --- Session Storage ---
+sessionStorage.setItem("étape", "2");
+console.log("Étape sessionStorage :", sessionStorage.getItem("étape"));
+
+// --- Cookies ---
+document.cookie = "utilisateur=Ali; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/";
+console.log("Cookies :", document.cookie);
+
+// --- Exemple avec formulaire ---
+function sauvegarder() {
+    const nom = document.getElementById("nom").value;
+    localStorage.setItem("nom_utilisateur", nom);
+    alert("Nom sauvegardé !");
+}
+
+function lire() {
+    const nom = localStorage.getItem("nom_utilisateur");
+    alert("Nom enregistré : " + nom);
+} */
+//Exercice sur localStorage
