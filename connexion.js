@@ -217,4 +217,33 @@ function lire() {
     const nom = localStorage.getItem("nom_utilisateur");
     alert("Nom enregistré : " + nom);
 } */
-//Exercice sur localStorage
+//Exercice sur les Stockages
+// Étape 1 : Récupérer les données utilisateur depuis l'API
+fetch('https://jsonplaceholder.typicode.com/users/10') // utilisateur ID = 1
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Erreur de récupération');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Étape 2 : Enregistrer dans sessionStorage
+    sessionStorage.setItem('utilisateur', JSON.stringify(data));
+
+    // Étape 3 : Afficher dans le navigateur
+    afficherUtilisateur(data);
+  })
+  .catch(error => {
+    console.error('Erreur :', error);info_utilisateur
+  });
+
+// Fonction pour afficher l'utilisateur
+function afficherUtilisateur(utilisateur) {
+  const div = document.getElementById('utilisateur');
+  div.innerHTML = `
+    <p><strong>Nom :</strong> ${utilisateur.name}</p>
+    <p><strong>Email :</strong> ${utilisateur.email}</p>
+    <p><strong>Ville :</strong> ${utilisateur.address.city}</p>
+  `;
+}
+
