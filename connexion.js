@@ -216,10 +216,10 @@ function sauvegarder() {
 function lire() {
     const nom = localStorage.getItem("nom_utilisateur");
     alert("Nom enregistré : " + nom);
-} */
+} 
 //Exercice sur les Stockages
 // Étape 1 : Récupérer les données utilisateur depuis l'API
-fetch('https://jsonplaceholder.typicode.com/users/10') // utilisateur ID = 1
+fetch('https://jsonplaceholder.typicode.com/users/1') // utilisateur ID = 1
   .then(response => {
     if (!response.ok) {
       throw new Error('Erreur de récupération');
@@ -245,5 +245,85 @@ function afficherUtilisateur(utilisateur) {
     <p><strong>Email :</strong> ${utilisateur.email}</p>
     <p><strong>Ville :</strong> ${utilisateur.address.city}</p>
   `;
+}*/
+// LES CLASS EN JS
+// Exemple : 
+//Encapsulation
+class Compte {
+    // Attribut privé (accessible uniquement dans la classe)
+    #solde = 0;
+    constructor(montantInitial) {
+        // Initialise le solde avec la valeur donnée au moment de la création
+        this.#solde = montantInitial;
+    }
+    deposer(montant) {
+        // Ajoute le montant au solde
+        this.#solde += montant;
+    }
+    afficherSolde() {
+        // Affiche le solde actuel dans la console
+        console.log(`Solde: ${this.#solde}`);
+    }
 }
+// Utilisation :
+const compte = new Compte(100);
+compte.deposer(50);
+compte.afficherSolde(); // Affiche : Solde: 150
+ 
+// La Notion d'Héritage
+//Une classe peut hériter d’une autre avec le mot-clé `extends`.
+// Classe de base (parent)
+class Animal {
+    parler() {
+        // Méthode qui affiche un message générique
+        console.log("L’animal fait un bruit");
+    }
+}
+// Classe enfant qui hérite de Animal
+class Chien extends Animal {
+    // Redéfinit la méthode parler()
+    parler() {
+        console.log("Le chien aboie");
+    }
+}
+// Utilisation :
+const monChien = new Chien();
+monChien.parler(); // Affiche : Le chien aboie
+ 
+//🔹 Polymorphisme
+//Une méthode peut se comporter différemment selon l’objet.
+// Les deux classes ont une méthode parler()
+class animal {
+    parler() {
+        console.log("L’animal fait un bruit");
+    }
+}
+class chien extends animal {
+    parler() {
+        console.log("Le chien aboie");
+    }
+}
+// Création d'un tableau contenant différents objets
+const animaux = [new animal(), new chien()];
+// On appelle la méthode parler() sur chaque objet
+animaux.forEach(a => a.parler());
 
+//🔹 Abstraction
+//Simulée en JS via des classes abstraites avec des méthodes à implémenter manuellement.
+// Exemple simple (convention) 
+// Classe "abstraite" (non instanciable telle quelle)
+class Vehicule {
+    demarrer() {
+        // Lève une erreur si cette méthode n'est pas redéfinie dans la classe enfant
+        throw new Error("Méthode à implémenter");
+    }
+}
+// Classe concrète qui hérite et redéfinit la méthode
+class Voiture extends Vehicule {
+    demarrer() {
+        console.log("Vroum !");
+    }
+}
+// Utilisation :
+const voiture = new Voiture();
+voiture.demarrer(); // Affiche : Vroum !
